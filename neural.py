@@ -2,10 +2,11 @@
 #### Import Libraries ####
 import streamlit as st
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
+from streamlit_drawable_canvas import st_canvas
 
 
 #### Neural Network Functions ####
@@ -74,15 +75,25 @@ st.markdown(
     """
 )
 
-# Upload image
-uploaded_file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png"])
- 
+canvas_result = st_canvas(
+    stroke_width=3,
+    stroke_color='#ffffff',
+    background_color="#00000",
+    height=150,
+    width=150,
+    drawing_mode='freedraw',
+    key="canvas",
+)
 
 #### Prediction ####
-if uploaded_file is not None:
-    image = Image.open(uploaded_file).convert('L')  # Convert to grayscale
+if canvas_result.image_data is not None:
+    st.image(canvas_result.image_data)
+    image = Image.fromarray(canvas_result.image_data).convert('L')
     image = image.resize((28, 28))
-    image = np.array(image) #/ 255.0 
+    image = np.array(image)
     prediction = show_prediction(image, W1, b1, W2, b2)
-    st.write('Your image is:', prediction)
-    st.image(image, caption='Uploaded Image',use_column_width=True)
+    if image.any() != 0:
+        st.write('Your image is:', prediction)
+        st.image(image, caption='Uploaded Image',use_column_width=True)
+
+
