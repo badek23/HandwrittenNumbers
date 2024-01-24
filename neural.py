@@ -72,7 +72,7 @@ st.markdown("<h1 style='text-align: center; color: black;'>Handwritten Number Pr
 st.markdown("<h1 style='font-size: 1em; text-align: center; color: black;'>Write a number below on the canvas, and our algorithm will predict which number it is.</h1>", unsafe_allow_html=True)
 
 canvas_result = st_canvas(
-    stroke_width=3,
+    stroke_width=10,
     stroke_color='#ffffff',
     background_color="#00000",
     height=800,
