@@ -1,3 +1,4 @@
+# Import all necessary libraries
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -5,11 +6,10 @@ import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
 
+
+# Create all necessary neural network functions
 def ReLU(Z):
     return np.maximum(Z,0)
-
-def derivative_ReLU(Z):
-    return Z > 0
 
 def softmax(Z):
     """Compute softmax values for each sets of scores in x."""
@@ -50,21 +50,36 @@ def show_prediction(image, W1, b1, W2, b2):
     plt.show()
     return prediction
 
-# Open training data
+
+# Open trained params
 with open("trained_params.pkl","rb") as dump_file:
     W1, b1, W2, b2=pickle.load(dump_file)
 
 
-# STREAMLIT 
-     
+# Streamlit
+st.set_page_config(page_title='Neural Network', page_icon='🧠')
+
+# Hide menu + footer options for users
+st.markdown(""" <style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style> """, unsafe_allow_html=True)
+
+st.title('Handwritten Number Predictor')
+st.markdown(
+    """
+    Write a number below on the canvas, and our algorithm will predict which number it is.
+    """
+)
+
 uploaded_file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png"])
  
-# Load the image (replace 'your_image_file.png' with the actual file path)
-#image = "image.png"
+
+# Standardize image parameters and come up with prediction
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('L')  # Convert to grayscale
     image = image.resize((28, 28))
-    image = np.array(image) #/ 255.0  # Normalize pixel values to be in the range [0, 1]
+    image = np.array(image) #/ 255.0 
     prediction = show_prediction(image, W1, b1, W2, b2)
     st.image(image, caption='Uploaded Image',use_column_width=True)
-    st.write('Your image was:', prediction)
+    st.write('Your image is:', prediction)
