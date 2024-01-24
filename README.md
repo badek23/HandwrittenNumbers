@@ -18,3 +18,4 @@ The deployed app URL is: https://handwrittennumbers.streamlit.app/
 - .streamlit: This folder holds a configuration file for the streamlit app
 - training model.ipynb: The code for training the neural network; this code produces the trained_params.pkl file
 - requirements.txt: The version requirements file for deployment in streamlit
+- Usage_Recording.mp4: Recording of example usage of this app
