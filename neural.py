@@ -81,5 +81,5 @@ if uploaded_file is not None:
     image = image.resize((28, 28))
     image = np.array(image) #/ 255.0 
     prediction = show_prediction(image, W1, b1, W2, b2)
-    st.image(image, caption='Uploaded Image',use_column_width=True)
     st.write('Your image is:', prediction)
+    st.image(image, caption='Uploaded Image',use_column_width=True)
