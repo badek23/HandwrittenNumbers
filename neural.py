@@ -69,8 +69,7 @@ footer {visibility: hidden;}
 
 # Text on page
 st.markdown("<h1 style='text-align: center; color: black;'>Handwritten Number Predictor</h1>", unsafe_allow_html=True)
-
-st.markdown("<h2 style='text-align: center; color: black;'>Write a number below on the canvas, and our algorithm will predict which number it is.</h2>", unsafe_allow_html=True)
+st.markdown("<h1 style='font-size: 4em; text-align: center; color: black;'>Write a number below on the canvas, and our algorithm will predict which number it is.</h1>", unsafe_allow_html=True)
 
 canvas_result = st_canvas(
     stroke_width=3,
