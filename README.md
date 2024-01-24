@@ -11,3 +11,8 @@ Our next planned step is to recreate this project using TensorFlow.
 
 ### Deployed app
 The deployed app URL is: (DEPLOYMENT IN PROGRESS)
+
+### Files
+- neural.py: The script for the deployed app
+- trained_params.pkl: The file holding the trained parameters of the neural network
+- .streamlit: This folder holds a configuration file for the streamlit app
