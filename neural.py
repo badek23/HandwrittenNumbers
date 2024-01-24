@@ -1,4 +1,5 @@
-# Import all necessary libraries
+
+#### Import Libraries ####
 import streamlit as st
 import numpy as np
 from PIL import Image
@@ -7,7 +8,7 @@ import pickle
 import matplotlib.pyplot as plt
 
 
-# Create all necessary neural network functions
+#### Neural Network Functions ####
 def ReLU(Z):
     return np.maximum(Z,0)
 
@@ -56,7 +57,7 @@ with open("trained_params.pkl","rb") as dump_file:
     W1, b1, W2, b2=pickle.load(dump_file)
 
 
-# Streamlit
+#### Streamlit ####
 st.set_page_config(page_title='Neural Network', page_icon='🧠')
 
 # Hide menu + footer options for users
@@ -65,6 +66,7 @@ st.markdown(""" <style>
 footer {visibility: hidden;}
 </style> """, unsafe_allow_html=True)
 
+# Text on page
 st.title('Handwritten Number Predictor')
 st.markdown(
     """
@@ -72,10 +74,11 @@ st.markdown(
     """
 )
 
+# Upload image
 uploaded_file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png"])
  
 
-# Standardize image parameters and come up with prediction
+#### Prediction ####
 if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('L')  # Convert to grayscale
     image = image.resize((28, 28))
