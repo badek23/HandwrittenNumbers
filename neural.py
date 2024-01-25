@@ -2,7 +2,7 @@
 #### Import Libraries ####
 import streamlit as st
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image
 import pandas as pd
 import pickle
 import matplotlib.pyplot as plt
