@@ -11,8 +11,7 @@ This project was built in collaboration with a classmate. After my team won the 
 - The updated project is coded in Python. Libraries used include: 🤖tensorflow | 🧮numpy | 📈matplotlib | 🎨streamlit | 🖼️PIL
 
 ### Deployed app
-- The original deployed app URL is: https://handwrittennumbers.streamlit.app/
-- The updated deployed app URL is: IN PROGRESS
+The original deployed app URL is: https://handwrittennumbers.streamlit.app/
 
 ### Files
 For the original project:
@@ -26,5 +25,5 @@ For the original project:
 For the updated project:
 - neural_tensorflow.py: The script for the deployed app
 - training_model_tensorflow.ipynb: The code for training the neural network; this code produces the trained_params_tensorflow folder
-- trained_params_tensorflow: The saved trained model
+- trained_params_tensorflow: The folder containing the trained model
 
