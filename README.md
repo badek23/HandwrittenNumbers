@@ -8,7 +8,7 @@ This project was built in collaboration with a classmate. After my team won the 
 
 ### Technologies 
 - The original project is coded in Python. Libraries used include: 🐼pandas | 🧮numpy | 📈matplotlib | 🥒pickle | 🎨streamlit | 🖼️PIL
-- The updated project is coded in Python. Libraries used include: 🤖tensorflow | 🧮numpy | 📈matplotlib | 🎨streamlit | 🖼️PIL
+- The updated project is coded in Python. Libraries used include: 🔷tensorflow | 🧮numpy | 📈matplotlib | 🎨streamlit | 🖼️PIL
 
 ### Deployed app
 The original deployed app URL is: https://handwrittennumbers.streamlit.app/
